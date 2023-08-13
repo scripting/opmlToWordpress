@@ -2,7 +2,7 @@
 	"name": "opmltowordpress",
 	"description": "A Node.js app that keeps outlines in sync with WordPress sites.",
 	"version": "0.4.0",
-	"main": "opmltowordpress.js",
+	"main": "optowp.js",
 	"dependencies" : {
 		"daveutils": "*",
 		"davehttp": "*",
