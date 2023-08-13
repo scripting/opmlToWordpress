@@ -2,6 +2,8 @@
 
 A Node.js app that keeps outlines in sync with WordPress sites.
 
+### Dislcaimer
+
 ### How to
 
 To run an instance of this app:
@@ -10,7 +12,7 @@ To run an instance of this app:
 
 2. Edit config.json, replace the values of username, siteurl, and password to match your wordpress.com login info. 
 
-3. Change the value of opmlurl to point to a calendar-structured outline.
+3. Change the value of opmlurl to point to a calendar-structured outline. (See <a href="https://github.com/scripting/opmlToWordpress#what-is-a-calendar-structured-outline">below</a>.)
 
 4. CD into the directory you downloaded. 
 
@@ -20,7 +22,7 @@ To run an instance of this app:
 
 ### What is a calendar-structured outline?
 
-It's an OPML file that's organized like a calendar in a particular way with headlines with the correct attributes. There is no spec for this, there probably should. You can easily create one using Drummer, see the blogging docs. or follow the example of the Scripting News OPML file, it is a calendar-structured OPML file. 
+It's an OPML file that's organized like a calendar in a particular way with headlines with the correct attributes. There is no spec for this, there probably should. You can easily create one using <a href="https://drummer.land/">Drummer</a>, see the <a href="http://docserver.scripting.com/drummer/blogging.opml">blogging docs</a>. or follow the <a href="https://github.com/scripting/Scripting-News/tree/master/blog/opml">example</a> of the Scripting News OPML files, it is a calendar-structured OPML file. 
 
 ### Calling your server
 
@@ -28,9 +30,7 @@ If your server is at myoptowp.com and your outline is at hello.com/myoutline.opm
 
 http://myoptowp.com/ping?url=http://hello.com/myoutline.opml
 
-It returns info about what it did. 
-
-Note: this will only work if the outline you entered in step 3 above matches the outline you call it with in the URL above. 
+Note: this will only work if the outline you entered in step 3 above matches the outline you call it with. 
 
 ### If you're using Drummer (todo)
 
@@ -38,13 +38,11 @@ You can set up a command in the Scripts menu to call the server to rebuild your 
 
 ### Notes
 
-We only rebuild posts that have changed since the last ping. 
+* We only rebuild posts that have changed since the last ping. 
 
-### My instance
+* A ping returns information about what it did, which new posts were created and which posts were updated. If nothing changed, it reports that too. 
 
-I'm running an instance of this app at optowp.scripting.com.
+* I'm running an instance of this app at optowp.scripting.com. If we're working together on something I'd be happy to set it up so you can ping it. 
 
-http://optowp.scripting.com/
-
-If we're working together on something I'd be happy to set it up so you can use it. 
+* Thanks to <a href="https://www.manton.org/">Manton Reece</a>. I just copied the way he did the interface between Drummer and micro.blog. 
 
