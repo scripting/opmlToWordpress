@@ -175,6 +175,7 @@ function processOutline (theUser, theOutline, callback) {
 	}
 
 function handlePing (urlBlogOpml, callback) { 
+	var flfound = false;
 	console.log ("handlePing: urlBlogOpml == " + urlBlogOpml);
 	config.users.forEach (function (theUser) {
 		if (theUser.opmlurl == urlBlogOpml) {
@@ -187,24 +188,17 @@ function handlePing (urlBlogOpml, callback) {
 					processOutline (theUser, theOutline, callback);
 					}
 				});
+			flfound = true;
 			}
 		});
-	}
-function handleHttpRequest (theRequest) {
-	var now = new Date ();
-	const params = theRequest.params;
-	const token = params.oauth_token;
-	const secret = params.oauth_token_secret;
-	function returnRedirect (url, code) { 
-		var headers = {
-			location: url
-			};
-		if (code === undefined) {
-			code = 302;
-			}
-		theRequest.httpReturn (code, "text/plain", code + " REDIRECT", headers);
+	if (!flfound) {
+		const message = "Can't handle the ping because \"" + urlBlogOpml + "\" is not one of the outlines that has been registered.";
+		callback ({message});
 		}
-		
+	}
+
+function handleHttpRequest (theRequest) {
+	const params = theRequest.params, now = new Date ();
 	function returnPlainText (s) {
 		theRequest.httpReturn (200, "text/plain", s.toString ());
 		}
@@ -214,19 +208,11 @@ function handleHttpRequest (theRequest) {
 			}
 		theRequest.httpReturn (200, "application/json", utils.jsonStringify (jstruct));
 		}
-	function returnJsontext (jsontext) { //9/14/22 by DW
+	function returnJsontext (jsontext) { 
 		theRequest.httpReturn (200, "application/json", jsontext.toString ());
 		}
 	function returnError (jstruct) {
 		theRequest.httpReturn (500, "application/json", utils.jsonStringify (jstruct));
-		}
-	function returnOpml (err, opmltext) {
-		if (err) {
-			returnError (err);
-			}
-		else {
-			theRequest.httpReturn (200, "text/xml", opmltext);
-			}
 		}
 	function httpReturn (err, returnedValue) {
 		if (err) {
@@ -241,29 +227,11 @@ function handleHttpRequest (theRequest) {
 				}
 			}
 		}
-	function xmlReturn (err, xmltext) { //9/17/22 by DW
-		if (err) {
-			returnError (err);
-			}
-		else {
-			theRequest.httpReturn (200, "text/xml", xmltext);
-			}
-		}
-	function callWithScreenname (callback) {
-		davetwitter.getScreenName (token, secret, function (screenname) {
-			if (screenname === undefined) {
-				returnError ({message: "Can't do the thing you want because the accessToken is not valid."});    
-				}
-			else {
-				callback (screenname);
-				}
-			});
-		}
 	switch (theRequest.method) {
 		case "GET":
 			switch (theRequest.lowerpath) {
 				case "/now": 
-					returnPlainText (new Date ().toString ());
+					returnPlainText (now.toString ());
 					return (true);
 				case "/ping": 
 					handlePing (params.url, httpReturn);
