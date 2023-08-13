@@ -101,7 +101,6 @@ function processOutline (theUser, theOutline, callback) {
 		return (thePostList);
 		}
 	function processPost (itemFromOutline, callback) {
-		console.log ("processPost: itemFromOutline == " + utils.jsonStringify (itemFromOutline));
 		var thePost = {
 			title: "",
 			content: "",
@@ -114,7 +113,6 @@ function processOutline (theUser, theOutline, callback) {
 			thePost.title = itemFromOutline.text;
 			thePost.content = getItemSubs (itemFromOutline);
 			}
-		console.log ("processPost: thePost == " + utils.jsonStringify (thePost));
 		var savedPost = getSavedPost (theUser.siteurl, itemFromOutline.created);
 		if (savedPost === undefined) {
 			client.newPost (thePost, function (err, idNewPost) {
@@ -122,7 +120,6 @@ function processOutline (theUser, theOutline, callback) {
 					callback (err);
 					}
 				else {
-					console.log ("processPost: idNewPost == " + idNewPost);
 					const theSavedPost = {
 						title: thePost.title,
 						content: thePost.content,
@@ -152,8 +149,6 @@ function processOutline (theUser, theOutline, callback) {
 				}
 			}
 		}
-	console.log ("processOutline: theUser == " + utils.jsonStringify (theUser));
-	
 	const thePostList = getPostList ();
 	function doNextPost (ix) {
 		if (ix < thePostList.length) {
@@ -177,9 +172,6 @@ function processOutline (theUser, theOutline, callback) {
 			}
 		}
 	doNextPost (0);
-	
-	
-	
 	}
 
 function handlePing (urlBlogOpml, callback) { 
