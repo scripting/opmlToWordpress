@@ -8,17 +8,17 @@ A Node.js app that keeps calendar-structured outlines in sync with WordPress sit
 
 To run an instance of this app:
 
-1. Download the contents of this repo.
+1. <a href="https://github.com/scripting/opmlToWordpress/archive/refs/heads/main.zip">Download</a> the contents of this repo.
 
-2. Edit config.json, replace the values of username, siteurl, and password to match your wordpress.com login info. 
+2. Edit <a href="https://github.com/scripting/opmlToWordpress/blob/main/config.json">config.json</a>, replace the values of username, siteurl, and password to match your wordpress.com login info. 
 
-3. Change the value of opmlurl to point to a calendar-structured outline. (See <a href="https://github.com/scripting/opmlToWordpress#what-is-a-calendar-structured-outline">below</a>.)
+3. Change the value of opmlurl to point to a calendar-structured outline containing your posts. (See <a href="https://github.com/scripting/opmlToWordpress#what-is-a-calendar-structured-outline">below</a>.)
 
-4. CD into the directory you downloaded. 
+4. <i>cd</i> into the directory you downloaded. 
 
 5. Run <i>npm install</i> at the command line. 
 
-6. Then node <i>optowp.js</i> to launch the server.
+6. Then <i>node</i> <i>optowp.js</i> to launch the server.
 
 ### What is a calendar-structured outline?
 
@@ -47,6 +47,8 @@ When you've added or modified a post, choose the command, and your WordPress sit
 * A ping returns information about what it did, which new posts were created and which posts were updated. If nothing changed, it reports that too. 
 
 * I'm running an instance of this app at optowp.scripting.com. If we're working together on something I'd be happy to set it up so you can ping it. 
+
+* You can add as many users as you like to config.json. The <i>users</i> object is an array.
 
 * Thanks to <a href="https://www.manton.org/">Manton Reece</a>. I just copied the way he did the interface between Drummer and micro.blog. A nice design. One of my mottos: Only steal from the best. :smile:
 
