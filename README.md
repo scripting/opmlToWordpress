@@ -36,25 +36,7 @@ Note: this will only work if the outline you entered in step 3 above matches the
 
 Assuming you have created a public outline, and followed the instructions in the Blogging docs to add an initial post, add a command to your Scripts menu in Drummer, with the title <i>Publish to WordPress.</i> Under the title, enter the following script.
 
-```
-
-var urlOutline = opml.getHeaders ().urlPublic;
-
-if (urlOutline === undefined) {
-
-dialog.alert ("Can't publish your outline because it doesn't have an \"urlPublic\" head-level attribute.");
-
-}
-
-else { //ping the server
-
-console.log (http.readUrl ("http://optowp.scripting.com/ping?url=" + urlOutline)); 
-
-speaker.beep ()
-
-}
-
-```
+```JavaScriptvar urlOutline = opml.getHeaders ().urlPublic;if (urlOutline === undefined) {	dialog.alert ("Can't publish your outline because it doesn't have an \"urlPublic\" head-level attribute.");	}else { //ping the server	console.log (http.readUrl ("http://optowp.scripting.com/ping?url=" + urlOutline)); 	speaker.beep ()	}```
 
 When you've added or modified a post, choose the command, and your WordPress site should have rebuilt. 
 
