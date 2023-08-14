@@ -1,6 +1,6 @@
 {
 	"name": "opmltowordpress",
-	"description": "A Node.js app that keeps outlines in sync with WordPress sites.",
+	"description": "A Node.js app that keeps calendar-structured outlines in sync with WordPress sites.",
 	"version": "0.4.0",
 	"main": "optowp.js",
 	"dependencies" : {

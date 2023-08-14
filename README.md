@@ -1,6 +1,6 @@
 # opmlToWordpress
 
-A Node.js app that keeps outlines in sync with WordPress sites.
+A Node.js app that keeps calendar-structured outlines in sync with WordPress sites.
 
 ### Dislcaimer
 
