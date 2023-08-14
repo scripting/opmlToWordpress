@@ -38,7 +38,7 @@ Assuming you have created a public outline, and followed the instructions in the
 
 ```JavaScriptvar urlOutline = opml.getHeaders ().urlPublic;if (urlOutline === undefined) {	dialog.alert ("Can't publish your outline because it doesn't have an \"urlPublic\" head-level attribute.");	}else { //ping the server	console.log (http.readUrl ("http://optowp.scripting.com/ping?url=" + urlOutline)); 	speaker.beep ()	}```
 
-When you've added or modified a post, choose the command, and your WordPress site should have rebuilt. 
+When you've added or modified a post, choose the command, and your WordPress site should be rebuilt to reflect your additions and changes. 
 
 ### Notes
 
