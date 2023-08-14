@@ -48,5 +48,5 @@ When you've added or modified a post, choose the command, and your WordPress sit
 
 * I'm running an instance of this app at optowp.scripting.com. If we're working together on something I'd be happy to set it up so you can ping it. 
 
-* Thanks to <a href="https://www.manton.org/">Manton Reece</a>. I just copied the way he did the interface between Drummer and micro.blog. 
+* Thanks to <a href="https://www.manton.org/">Manton Reece</a>. I just copied the way he did the interface between Drummer and micro.blog. A nice design. One of my mottos: Only steal from the best. :smile:
 
