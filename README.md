@@ -50,5 +50,5 @@ When you've added or modified a post, choose the command, and your WordPress sit
 
 * You can add as many users as you like to config.json. The <i>users</i> object is an array.
 
-* Thanks to <a href="https://www.manton.org/">Manton Reece</a>. I just copied the way he did the interface between Drummer and micro.blog. A nice design. One of my mottos: Only steal from the best. :smile:
+* Thanks to <a href="https://www.manton.org/">Manton Reece</a>. I just copied the way he did the interface between Drummer and <a href="https://micro.blog/">micro.blog</a>. A nice design. One of my mottos: Only steal from the best. :smile:
 
