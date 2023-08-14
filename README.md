@@ -22,7 +22,7 @@ To run an instance of this app:
 
 ### What is a calendar-structured outline?
 
-It's an OPML file that's organized like a calendar in a particular way with headlines with the correct attributes. There is no spec for this, there probably should. You can easily create one using <a href="https://drummer.land/">Drummer</a>, see the <a href="http://docserver.scripting.com/drummer/blogging.opml">blogging docs</a>. or follow the <a href="https://github.com/scripting/Scripting-News/tree/master/blog/opml">example</a> of the Scripting News OPML files, it is a calendar-structured OPML file. 
+It's an <a href="http://opml.org/">OPML</a> file that's organized like a calendar in a particular way with headlines with the correct attributes. There is no spec for this, there probably should. You can easily create one using <a href="https://drummer.land/">Drummer</a>, see the <a href="http://docserver.scripting.com/drummer/blogging.opml">blogging docs</a>. or follow the <a href="https://github.com/scripting/Scripting-News/tree/master/blog/opml">example</a> of the Scripting News OPML files, it is a calendar-structured OPML file. 
 
 ### Calling your server
 
